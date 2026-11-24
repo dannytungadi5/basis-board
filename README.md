@@ -1,13 +1,10 @@
-# basis-board
+# Basis Board, refreshed 24 Nov 2026
 
-Every tokenized stock (B20) on Base, priced on-chain. Read-only, pinned-block, fail-closed. Base Stocks Maxxing - Programmable Stock Markets track.
+415 registered, 131 minted, 368 pool records scanned, 82 verified and priced on-chain, 33 priced tokens, 13 usable official NAV feeds, 118 without anchor. Snapshot TVL metadata $21,059,570; average absolute basis 0.2259%. Reference block 61649443 at 2026-11-24 11:37:44 UTC. Each token uses its slice block. Registry and discovery refreshed at about 11:36 UTC.
 
-- **Snapshot board (audited, hash-pinned):** https://dannytungadi5.github.io/basis-board/
-- **LIVE companion (prices recomputed in your browser via dual-RPC eth_call):** https://dannytungadi5.github.io/basis-board/live.html
+Snapshot https://dannytungadi5.github.io/basis-board/
+Live https://dannytungadi5.github.io/basis-board/live.html
 
-The live page queries two independent public Base RPCs at a pinned block and only shows values that match byte-for-byte. No wallet, no keys, no transactions.
+Snapshot pool prices use recorded single-endpoint eth_call; NAV/registry checks compare two endpoints. Live companion requires two byte-identical responses; third endpoint only replaces a primary transport failure. No trades or execution promises. Liquidity is discovery metadata, not a fresh executable quote.
 
-
-375 pool records scanned; 82 verified and priced on-chain (snapshot coverage).
-
-Two primary public Base RPC endpoints (mainnet.base.org and publicnode) are compared byte-for-byte. A third endpoint (BlastAPI) replaces one primary only after a transport failure; it is not a third vote. Two matching responses are required; a mismatch or only one usable response hides the value.
+QA 18/18 PASS. Old hard-coded 94-universe check replaced with equality against the newly fetched nonzero-supply registry set, not merely increased to 131. New dashboard data matches board exactly. New caption/video replace earlier 94-token submission material. Historical M1 genesis remains unchanged and refers to the earlier snapshot, not this new census.
